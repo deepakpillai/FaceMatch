@@ -9,5 +9,6 @@ Moved away from the TinyVGG model architecture to the pre-trained VGG16 model to
 Mostly it works if we keep the threshold to 70% similarity.
 
 [Next step]
+
 Moving from VGG16 to FaceNet or to OpenFace to get a better face feature embedding 
 
