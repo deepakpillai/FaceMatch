@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload Two Images</title>
+</head>
+<style>
+#imagediv {
+    width: 500px;
+    display: flex;
+}
+
+#imagediv1, #imagediv2 {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+</style>
+<body>
+<h1>Face Match</h1>
+<h3>Upload Two Images</h3>
+<input type="file" name="image1" id="image1" accept="image/jpeg,image/png">
+<input type="file" name="image2" id="image2" accept="image/jpeg,image/png">
+<button onclick="uploadImages()">Submit</button>
+<br/>
+<br/>
+<div id="imagediv">
+    <div id="imagediv1">
+    </div>
+    <div id="imagediv2">
+    </div>
+</div>
+<br/>
+<h1 id="resultdiv"></h1>
+<div id="progress"></div>
+<script>
+function uploadImages() {
+document.getElementById("imagediv1").innerHTML = "";
+document.getElementById("imagediv2").innerHTML = "";
+document.getElementById("resultdiv").innerHTML = "";
+document.getElementById("progress").innerHTML = "";
+var image1 = document.getElementById("image1").files[0];
+var image2 = document.getElementById("image2").files[0];
+
+var img1 = new Image();
+img1.src = window.URL.createObjectURL(image1);
+img1.width = 250;
+img1.height = 250;
+document.getElementById("imagediv1").appendChild(img1);
+
+var img2 = new Image();
+img2.src = window.URL.createObjectURL(image2);
+img2.width = 250;
+img2.height = 250;
+document.getElementById("imagediv2").appendChild(img2);
+
+var formData = new FormData();
+formData.append("image1", image1);
+formData.append("image2", image2);
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "/get_two_images");
+xhr.upload.addEventListener("progress", function(event) {
+var progress = event.loaded / event.total * 100;
+document.getElementById("progress").innerHTML = "Upload percentage" + progress + "%" + "<br/> Awaiting result..";
+});
+xhr.onload = function() {
+if (xhr.status === 200) {
+    document.getElementById("progress").innerHTML = "";
+    var json = JSON.parse(xhr.responseText);
+    document.getElementById("resultdiv").innerHTML = json['message'];
+} else {
+    alert("An error occurred while uploading the images.");
+    document.getElementById("resultdiv").innerHTML = "";
+    document.getElementById("progress").innerHTML = "";
+}
+};
+xhr.send(formData);
+}
+</script>
+</body>
+</html>
