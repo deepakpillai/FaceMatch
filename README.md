@@ -1,5 +1,8 @@
 # FaceMatch
 
+Project to identify similarity between two faces
+
+
 <img align="left" src="https://github.com/deepakpillai/CNNFaceMatch/blob/main/Result.gif?raw=true" />
 
 <br>
@@ -17,8 +20,6 @@
 <br>
 
 [Inprogress]
-
-Project to predict the match between two faces
 
 [Progress as of 8/Aug/2023]
 
