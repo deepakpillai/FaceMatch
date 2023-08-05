@@ -1,4 +1,4 @@
-# CNNFaceMatch
+# FaceMatch
 
 <img align="left" src="https://github.com/deepakpillai/CNNFaceMatch/blob/main/Result.gif?raw=true" />
 
