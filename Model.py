@@ -69,10 +69,8 @@ class VGG_Model():
         model = self.load_model()
         with torch.inference_mode():
             embedding = model(data)
-            # print(f"embedding {embedding.shape}")
             flatten = nn.Flatten()
             embedding = flatten(embedding)
-            # print(f"Flatten {embedding.shape}")
             return embedding
 
 
@@ -82,6 +80,6 @@ class FaceEmbedding():
 
     def get_face_embedding(self, x: torch.Tensor):
         with torch.inference_mode():
-            # torch.manual_seed(3)
+            torch.manual_seed(42)
             embed = VGG_Model().get_embedding(x)
             return embed

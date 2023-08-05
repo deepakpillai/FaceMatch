@@ -20,12 +20,12 @@ class Extractface():
         for (x, y, w, h) in faces:
             # cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
             faces = img[y:y + h, x:x + w]
-            out_name = f"{outpt_name}.jpg"
+            out_name = f"Images/{outpt_name}.jpg"
             cv2.imwrite(out_name, faces)
 
     def get_image_tensor(self, image_name, outpt_name):
         self.extract_face_from_image(image_name, outpt_name)
-        out_name = f"{outpt_name}.jpg"
+        out_name = f"Images/{outpt_name}.jpg"
         self.resize_image(out_name)
         image = Image.open(out_name)
         # image = cv2.cvtColor(image, cv2.COLOR_RGBA2GRAY)
