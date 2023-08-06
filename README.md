@@ -28,5 +28,5 @@ Mostly it works if we keep the threshold to 70% similarity.
 
 [Next step]
 
-Moving from VGG16 to FaceNet or to OpenFace to get a better face feature embedding 
+Moving from VGG16 to FaceNet or to OpenFace to get a better facial feature embedding 
 
