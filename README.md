@@ -1,23 +1,12 @@
 # FaceMatch
 
-Project to identify similarity between two faces
-
+Objective:- Identify the similarity between two faces
 
 <img align="left" src="https://github.com/deepakpillai/CNNFaceMatch/blob/main/Result.gif?raw=true" />
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+### Approach:- 
+- Use VGG 16 pre-trained weights to get facial feature embeddings. 
+- Use cosine similarity to calculate the similarity
 
 [Inprogress]
 
