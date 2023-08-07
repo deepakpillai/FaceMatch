@@ -2,7 +2,7 @@
 
 Objective:- Identify the similarity between two faces
 
-<img align="left" src="https://github.com/deepakpillai/CNNFaceMatch/blob/main/Result.gif?raw=true" />
+<img align="left" src="https://github.com/deepakpillai/CNNFaceMatch/blob/main/Result.gif?raw=true" width="100%"/>
 
 ### Approach:- 
 - Use VGG 16 pre-trained weights to get facial feature embeddings. 
